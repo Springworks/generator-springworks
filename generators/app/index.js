@@ -1,18 +1,19 @@
 'use strict';
 
-var yeoman = require('yeoman-generator'),
-    chalk = require('chalk');
+var yeoman = require('yeoman-generator');
 
 
-
+/**
+ * Exports the generator
+ */
 module.exports = yeoman.generators.Base.extend({
 
-  constructor: function () {
+  constructor: function() {
     yeoman.generators.Base.apply(this, arguments);
     this.option('skip-install', {desc: 'Skip npm install'});
   },
 
-  initializing: function () {
+  initializing: function() {
     var welcomeMessage = [
           '\nSpringworks Scaffolding Generator\n'
         ];
@@ -21,7 +22,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   // Ask the user a couple of questions
-  prompting: function () {
+  prompting: function() {
     var done = this.async(),
 
         prompts = [
@@ -55,7 +56,7 @@ module.exports = yeoman.generators.Base.extend({
           }
         ];
 
-    this.prompt(prompts, function (answers) {
+    this.prompt(prompts, function(answers) {
       this.appname = answers.projectName.toLowerCase();
       this.projectDescription = answers.projectDescription;
       this.privateProject = answers.projectVisibility === 'privateProject' ? true : false;
@@ -65,7 +66,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   // Writes configuration to the `.yo-rc.json` file
-  configuring: function () {
+  configuring: function() {
     this.config.set({
       projectName: this.appname,
       projectDescription: this.projectDescription,
@@ -75,7 +76,7 @@ module.exports = yeoman.generators.Base.extend({
 
   // Writes a bunch of files to the destination directory
   writing: {
-    projectfiles: function () {
+    projectfiles: function() {
       this.template('_package.json', 'package.json');
       this.template('_README.md', 'README.md');
 
@@ -106,7 +107,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   // Installs dependencies
-  install: function () {
+  install: function() {
     this.installDependencies({
       skipInstall: this.options['skip-install'],
       bower: false
