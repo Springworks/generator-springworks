@@ -1,0 +1,22 @@
+{
+  "name": "<%= _.slugify(appname) %>",
+  "version": "1.0.0",
+  "description": "<%= projectDescription %>",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.9",
+    "angular-route": "~1.3.9",
+    "angular-translate": "~2.5.2",
+    "angular-translate-loader-partial": "~2.5.2",
+    "angular-translate-storage-cookie": "~2.5.2",
+    "bootstrap": "~3.3.2",
+    "jquery": "~2.1.1"
+  }
+}
