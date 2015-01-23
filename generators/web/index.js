@@ -68,10 +68,7 @@ module.exports = yeoman.generators.Base.extend({
 
     gitFiles: function() {
       this.copy('gitignore', '.gitignore');
-
-      if (this.privateProject) { // Extra files for private projects
-        this.copy('gitattributes', '.gitattributes');
-      }
+      this.copy('gitattributes', '.gitattributes');
     },
 
     lintFiles: function() {
@@ -106,13 +103,16 @@ module.exports = yeoman.generators.Base.extend({
 
   // Installs dependencies and run a gulp build
   install: function() {
-    this.installDependencies({
-      skipInstall: this.options['skip-install'],
-      bower: this.options['skip-install'],
-      callback: function () {
-        this.spawnCommand('gulp', ['build']);
-      }.bind(this)
-    });
+    /* istanbul ignore if */
+    if (!this.options['skip-install']) {
+      this.installDependencies({
+        skipInstall: false,
+        bower: true,
+        callback: function () {
+          this.spawnCommand('gulp', ['build']);
+        }.bind(this)
+      });
+    }
   }
 
 });
