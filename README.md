@@ -3,6 +3,7 @@ Springworks Yeoman Generator
 
 [![Build Status](https://travis-ci.org/Springworks/generator-springworks.png?branch=master)](https://travis-ci.org/Springworks/generator-springworks)
 [![Coverage Status](https://coveralls.io/repos/Springworks/generator-springworks/badge.png?branch=master)](https://coveralls.io/r/Springworks/generator-springworks?branch=master)
+[![Dependency Status](https://david-dm.org/springworks/generator-springworks.svg)](https://david-dm.org/springworks/generator-springworks)
 
 This generator helps to setup new projects in the Springworks organization.
 
