@@ -2,6 +2,9 @@
   env:
     node: true
 
+  globals:
+    Promise: true
+
   rules:
 
     # Trivia:     stroustrup is the designer and original implementor of C++.

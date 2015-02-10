@@ -75,7 +75,7 @@ describe('springworks:react (React Projects)', function() {
           './server/test',
           './server/views',
           './server/views/index.jade',
-          './server.js',
+          './server.js'
         ];
     assert.file(expected);
   });
