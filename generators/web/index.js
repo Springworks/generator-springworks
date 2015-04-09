@@ -108,7 +108,7 @@ module.exports = yeoman.generators.Base.extend({
       this.installDependencies({
         skipInstall: false,
         bower: true,
-        callback: function () {
+        callback: function() {
           this.spawnCommand('gulp', ['build']);
         }.bind(this)
       });

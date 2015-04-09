@@ -20,10 +20,8 @@ exports.validate = function validate(username, password, callback) {
 
   if (username === _user && password === _pass) {
     callback(null, true, { id: 1, name: _user });
-    return;
   }
   else {
     callback(null, false);
-    return;
   }
 };

@@ -12,7 +12,6 @@ var gulp = require('gulp'),
  */
 module.exports = function(config) {
   gulp.task('bundle', function(cb) {
-
     var started = false;
     var webpack_config = require('../../config/webpack.config.js')(config);
     var bundler = webpack(webpack_config);

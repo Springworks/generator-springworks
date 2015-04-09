@@ -24,7 +24,8 @@ module.exports = {
   style_src: 'client/assets/styles/index.less',
   style_dst: 'www/styles',
 
-  autoprefixer: [ // https://github.com/ai/autoprefixer
+  // https://github.com/ai/autoprefixer
+  autoprefixer: [
     'ie >= 10',
     'ie_mob >= 10',
     'ff >= 30',
