@@ -14,12 +14,12 @@ var pkg = require('../../package.json');
  * @param  {Object}  config  Config object for the task.
  */
 module.exports = function(config) {
-  gulp.task('bump', function(done){
+  gulp.task('bump', function(done) {
     var choices = ['major', 'premajor', 'minor', 'preminor', 'patch', 'prepatch', 'prerelease'];
 
     util.log('Current version:', util.colors.cyan(pkg.version));
 
-    choices = choices.map(function(versionType){
+    choices = choices.map(function(versionType) {
       return versionType + ' (v' + semver.inc(pkg.version, versionType) + ')';
     });
 
@@ -28,7 +28,7 @@ module.exports = function(config) {
       name: 'version',
       message: 'What version update would you like?',
       choices: choices
-    }, function(res){
+    }, function(res) {
       var increment = res.version.split(' ')[0],
           newVersion = semver.inc(pkg.version, increment);
 

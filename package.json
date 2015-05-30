@@ -36,7 +36,9 @@
   "devDependencies": {
     "chai": "^2.2.0",
     "coveralls": "^2.11.2",
-    "eslint": "^0.11.0",
+    "eslint": "^0.21.2",
+    "eslint-config-springworks": "^1.0.1",
+    "eslint-plugin-mocha": "^0.2.2",
     "istanbul": "^0.3.13",
     "mocha": "^2.2.1",
     "mocha-lcov-reporter": "0.0.1"

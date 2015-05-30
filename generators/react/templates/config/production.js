@@ -12,6 +12,6 @@ module.exports = {
     host: '0.0.0.0',
     port: 80,
     base_uri: '',
-    shutdown_timeout: (60 * 1000)
+    shutdown_timeout: 60 * 1000
   }
 };

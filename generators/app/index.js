@@ -59,10 +59,9 @@ module.exports = yeoman.generators.Base.extend({
     this.prompt(prompts, function(answers) {
       this.appname = answers.projectName.toLowerCase();
       this.projectDescription = answers.projectDescription;
-      this.privateProject = answers.projectVisibility === 'privateProject' ? true : false;
+      this.privateProject = answers.projectVisibility === 'privateProject';
       done();
     }.bind(this));
-
   },
 
   // Writes configuration to the `.yo-rc.json` file

@@ -16,10 +16,8 @@ module.exports = function(config) {
   var dest_path = path.join(config.base_dst, '/*');
 
   gulp.task('clean', function() {
-
     util.log('Cleaning ' + chalk.magenta(dest_path));
 
-    return gulp.src(dest_path, { read: false })
-               .pipe(rimraf({ force: true }));
+    return gulp.src(dest_path, { read: false }).pipe(rimraf({ force: true }));
   });
 };

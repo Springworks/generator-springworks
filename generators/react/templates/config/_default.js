@@ -14,7 +14,7 @@ module.exports = {
     host: 'localhost',
     port: 3000,
     base_uri: '',
-    shutdown_timeout: (1 * 1000),
+    shutdown_timeout: 1000,
 
     template_cache: {
       enabled: false

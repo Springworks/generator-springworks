@@ -59,7 +59,7 @@ ApiServer.prototype.initialize = Promise.method(function(opt_options) {
   }
 
   // Create the server
-  this.options = hoek.applyToDefaults(this.options, (opt_options || {}));
+  this.options = hoek.applyToDefaults(this.options, opt_options || {});
   this.server = new hapi.Server();
   this.server.connection({
     host: '0.0.0.0',
@@ -90,10 +90,10 @@ ApiServer.prototype.initialize = Promise.method(function(opt_options) {
  * @return  {Promise}             A promise that always resolves to the response.
  */
 ApiServer.prototype.inject = function(options) {
-  var this_server = this;
+  var self = this;
 
   return new Promise(function(resolve, reject) {
-    this_server.server.inject(options, function(response) {
+    self.server.inject(options, function(response) {
       resolve(response);
     });
   });
@@ -106,11 +106,11 @@ ApiServer.prototype.inject = function(options) {
  * @return  {Promise}  A promise that will be fullfilled once the server has started.
  */
 ApiServer.prototype.startServer = Promise.method(function() {
-  var this_server = this;
+  var self = this;
 
   return new Promise(function(resolve, reject) {
-    this_server.server.start(function() {
-      resolve(this_server.server.info.uri);
+    self.server.start(function() {
+      resolve(self.server.info.uri);
     });
   });
 });
@@ -124,10 +124,10 @@ ApiServer.prototype.startServer = Promise.method(function() {
  */
 ApiServer.prototype.stopServer = Promise.method(function(opt_timeout) {
   var timeout = opt_timeout || this.options.shutdown_timeout,
-      this_server = this;
+      self = this;
 
   return new Promise(function(resolve, reject) {
-    this_server.server.stop({'timeout': timeout}, function() {
+    self.server.stop({timeout: timeout}, function() {
       resolve('Server stopped');
     });
   });
