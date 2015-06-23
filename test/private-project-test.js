@@ -23,8 +23,9 @@ describe('springworks:app (private)', function() {
           '.gitattributes',
           '.eslintignore',
           '.eslintrc',
-          '.gjslintrc',
-          '.npmignore',
+          'test/.eslintrc',
+          'test/mocha.opts',
+          '.istanbul.yml',
           'README.md'
         ];
     assert.file(expected);

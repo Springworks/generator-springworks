@@ -93,15 +93,15 @@ module.exports = yeoman.generators.Base.extend({
       }
     },
 
+    testFiles: function() {
+      this.copy('.istanbul.yml', '.istanbul.yml');
+      this.copy('test/mocha.opts', 'test/mocha.opts');
+    },
+
     lintFiles: function() {
       this.copy('eslintignore', '.eslintignore');
       this.copy('eslintrc', '.eslintrc');
       this.copy('test/eslintrc', 'test/.eslintrc');
-      this.copy('gjslintrc', '.gjslintrc'); // Skoog specific ;)
-    },
-
-    npmFiles: function() {
-      this.copy('npmignore', '.npmignore');
     }
   },
 
