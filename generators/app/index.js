@@ -97,7 +97,6 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('eslintignore', '.eslintignore');
       this.copy('eslintrc', '.eslintrc');
       this.copy('test/eslintrc', 'test/.eslintrc');
-      this.copy('gjslintrc', '.gjslintrc'); // Skoog specific ;)
     },
 
     npmFiles: function() {

@@ -23,7 +23,6 @@ describe('springworks:app (private)', function() {
           '.gitattributes',
           '.eslintignore',
           '.eslintrc',
-          '.gjslintrc',
           '.npmignore',
           'README.md'
         ];
