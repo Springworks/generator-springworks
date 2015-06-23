@@ -24,7 +24,6 @@ describe('springworks:app (public)', function() {
           'LICENSE',
           '.eslintignore',
           '.eslintrc',
-          '.npmignore',
           'README.md'
         ];
     assert.file(expected);

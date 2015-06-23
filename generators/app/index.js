@@ -102,10 +102,6 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('eslintignore', '.eslintignore');
       this.copy('eslintrc', '.eslintrc');
       this.copy('test/eslintrc', 'test/.eslintrc');
-    },
-
-    npmFiles: function() {
-      this.copy('npmignore', '.npmignore');
     }
   },
 

@@ -23,7 +23,6 @@ describe('springworks:app (private)', function() {
           '.gitattributes',
           '.eslintignore',
           '.eslintrc',
-          '.npmignore',
           'test/.eslintrc',
           'test/mocha.opts',
           '.istanbul.yml',
