@@ -24,6 +24,9 @@ describe('springworks:app (private)', function() {
           '.eslintignore',
           '.eslintrc',
           '.npmignore',
+          'test/.eslintrc',
+          'test/mocha.opts',
+          '.istanbul.yml',
           'README.md'
         ];
     assert.file(expected);

@@ -4,21 +4,15 @@
   "description": "<%= projectDescription %>",
   "private": <%= privateProject %>,<% if (!privateProject) { %>
   "license": "MIT",<% } %>
-  "engines": {
-    "node": ">=0.10.33"
-  },
   "scripts": {
-    "test": "NODE_ENV=test istanbul cover --report teamcity --report lcov _mocha -- --ui bdd --check-leaks --recursive --slow 200 --reporter spec --globals 'Intl,IntlPolyfill' test",
+    "test": "NODE_ENV=test istanbul cover _mocha",
     "lint": "eslint .",<% if (!privateProject) { %>
-    "coveralls": "NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"<% } else { %>
-    "inspectjs": "jsinspect --threshold 30 ./lib",
-    "buddyjs": "buddy ./lib",
-    "quality": "npm run buddyjs && npm run inspectjs && npm run lint",
-    "test-acceptance": "NODE_ENV=test istanbul cover --report teamcity --report lcov _mocha -- --ui bdd --check-leaks --recursive --slow 200 --reporter spec --globals 'Intl,IntlPolyfill' $(find test/**/acceptance test/acceptance -name '*.js' 2>/dev/null)",
-    "test-changed": "NODE_ENV=test mocha --ui bdd --check-leaks --recursive --slow 200 --reporter spec --globals 'Intl,IntlPolyfill' $(git diff --name-only test | grep -E '(\\.js)$')",
-    "test-component": "NODE_ENV=test istanbul cover --report teamcity --report lcov _mocha -- --ui bdd --check-leaks --recursive --slow 200 --reporter spec --globals 'Intl,IntlPolyfill' $(find test/**/component test/component -name *.js 2>/dev/null)",
-    "test-no-cov": "NODE_ENV=test mocha --ui bdd --check-leaks --recursive --slow 200 --reporter spec --globals 'Intl,IntlPolyfill' test",
-    "test-unit": "NODE_ENV=test istanbul cover --report teamcity --report lcov _mocha -- --ui bdd --check-leaks --recursive --slow 200 --reporter spec --globals 'Intl,IntlPolyfill' $(find test/**/unit test/unit -name '*.js' 2>/dev/null)"<% } %>
+    "coveralls": "cat ./coverage/lcov.info | coveralls"<% } else { %>
+    "test-acceptance": "NODE_ENV=test istanbul cover _mocha -- $(find test/**/acceptance test/acceptance -name '*.js' 2>/dev/null)",
+    "test-changed": "NODE_ENV=test istanbul cover _mocha -- $(git diff --name-only test | grep -E '(\\.js)$')",
+    "test-component": "NODE_ENV=test istanbul cover _mocha -- $(find test/**/component test/component -name *.js 2>/dev/null)",
+    "test-no-cov": "NODE_ENV=test mocha",
+    "test-unit": "NODE_ENV=test istanbul cover _mocha -- $(find test/**/unit test/unit -name '*.js' 2>/dev/null)"<% } %>
   },
   "repository": {
     "type": "git",
@@ -31,14 +25,13 @@
   "dependencies": {
   },
   "devDependencies": {
-    "buddy.js": "^0.8.0",<% if (!privateProject) { %>
+    <% if (!privateProject) { %>
     "coveralls": "^2.11.2",<% } %>
-    "istanbul": "^0.3.13",
-    "eslint": "^0.21.2",
-    "eslint-config-springworks": "^1.0.1",
-    "eslint-plugin-mocha": "^0.2.2",
-    "jsinspect": "^0.5.0",
-    "mocha": "^2.2.1",
-    "chai": "^2.2.0"
+    "eslint": "0.23.0",
+    "eslint-config-springworks": "2.1.2",
+    "eslint-plugin-mocha": "0.2.2",
+    "istanbul": "^0.3.15",
+    "mocha": "^2.2.5",
+    "@springworks/test-harness": "^1.0.0"
   }
 }
