@@ -1,6 +1,8 @@
 language: node_js
 node_js:
-  - '0.12'
+  - "0.10"
+  - "0.12"
+  - "iojs"
 script:
   - npm run lint
   - npm test
@@ -10,3 +12,4 @@ notifications:
   email: false
   slack:
     secure: V3v+RTLnSF0V1cXRvQTsluiBusOIp2pR/54uD6CjQhv16GCjd2iB7orhbCcynMeaDR5e1eiJLybCKGeXFcfg/M/cZUk+H93nIGvK2jzj0xHAEB6cCOjEAf3BCqD9F3kX/EnMO7TgXO+5ZNK7SvcUw7qhJhYcjPgjdP9ihIwXChU=
+sudo: false
