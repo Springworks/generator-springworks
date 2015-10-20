@@ -33,6 +33,7 @@
     "eslint-plugin-mocha": "1.0.0",
     "istanbul": "0.4.0",
     "mocha": "2.3.3",
-    "@springworks/test-harness": "1.2.1"
+    "@springworks/test-harness": "1.2.1",
+    "babel": "5.8.23"
   }
 }
