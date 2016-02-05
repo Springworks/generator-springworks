@@ -1,5 +1,0 @@
-# Encrypt all config files, since they may contain passwords to databases etc
-config/*.js filter=git-crypt diff=git-crypt
-
-# Encrypt new relic with its license key
-newrelic.js filter=git-crypt diff=git-crypt

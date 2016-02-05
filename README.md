@@ -35,27 +35,6 @@ There are a couple of options for the generators, and those can be listed with
 $ yo springworks --help
 ```
 
-## What does it do?
-The generator will ask you a couple of questions and then setup the project for you.
-
-The files created are the following
-
-```
-├─── package.json
-├─── README.md
-├─── LICENSE (Only in public projects)
-├─── .gitignore
-├─── .gitattributes
-├─── .eslintignore
-├─── .eslintrc
-├─── .gjslintrc
-├─── .npmignore
-├─── .travis.yml (Only in public projects)
-└─── test/
-     └─── .eslintrc
-```
-
-
 ## License
 
 MIT
