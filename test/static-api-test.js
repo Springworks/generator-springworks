@@ -16,33 +16,36 @@ describe('test/static-api-test.js', () => {
   });
 
   it('should copy index file', () => {
-    assert.file('index.js');
+    assert.file('packages/static-api/index.js');
   });
 
   it('should copy README.md and set correct script names', () => {
-    assert.file('README.md');
-    assert.fileContent('README.md', /start-foo-app-static/);
-    assert.fileContent('README.md', /stop-foo-app-static/);
+    const readme_path = 'packages/static-api/README.md';
+    assert.file(readme_path);
+    assert.fileContent(readme_path, /start-foo-app-static/);
+    assert.fileContent(readme_path, /stop-foo-app-static/);
   });
 
   it('should copy scripts for starting server', () => {
-    assert.file('bin/start-server.js');
+    assert.file('packages/static-api/bin/start-server.js');
   });
 
   it('should copy script for stopping server', () => {
-    assert.file('bin/stop-server.js');
+    assert.file('packages/static-api/bin/stop-server.js');
   });
 
   it('should copy script for running server', () => {
-    assert.file('run-server.js');
+    assert.file('packages/static-api/run-server.js');
   });
 
   it('should copy package.json', () => {
-    assert.file('package.json');
+    assert.file('packages/static-api/package.json');
   });
 
   it('should update package.json with api name from input', () => {
-    assert.jsonFileContent('package.json', { name: `@springworks\/${api_name}-static` });
+    assert.jsonFileContent('packages/static-api/package.json', {
+      name: `@springworks\/${api_name}-static`,
+    });
   });
 
 });
