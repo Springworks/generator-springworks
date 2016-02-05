@@ -3,6 +3,5 @@ coverage/**
 node_modules/**
 scripts/**
 submodules/**
-generators/app/templates/**
-generators/web/templates/**
+generators/**/templates/**
 temp
