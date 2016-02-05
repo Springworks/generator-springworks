@@ -22,12 +22,6 @@
     "Springworks"
   ],
   "author": "Springworks",
-  "contributors": [
-    {
-      "name": "Patrik Skoog",
-      "email": "patrik.skoog@springworks.se"
-    }
-  ],
   "license": "MIT",
   "dependencies": {
     "chalk": "1.1.1",
