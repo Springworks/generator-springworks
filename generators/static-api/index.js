@@ -9,6 +9,8 @@ const module_dependencies = [
   'swagger-md',
 ];
 
+const static_api_package_dir = 'packages/static-api';
+
 module.exports = generators.Base.extend({
 
   constructor: function() {
@@ -47,18 +49,18 @@ module.exports = generators.Base.extend({
   writing: {
 
     serverScripts: function() {
-      this.copy('index.js', 'packages/static-api/index.js');
-      this.copy('run-server.js', 'packages/static-api/run-server.js');
-      this.copy('bin/start-server.js', 'packages/static-api/bin/start-server.js');
-      this.copy('bin/stop-server.js', 'packages/static-api/bin/stop-server.js');
+      this.copy('index.js', `${static_api_package_dir}/index.js`);
+      this.copy('run-server.js', `${static_api_package_dir}/run-server.js`);
+      this.copy('bin/start-server.js', `${static_api_package_dir}/bin/start-server.js`);
+      this.copy('bin/stop-server.js', `${static_api_package_dir}/bin/stop-server.js`);
     },
 
     packageFile: function() {
-      this.template('_package.json', 'packages/static-api/package.json');
+      this.template('_package.json', `${static_api_package_dir}/package.json`);
     },
 
     docs: function() {
-      this.template('_README.md', 'packages/static-api/README.md');
+      this.template('_README.md', `${static_api_package_dir}/README.md`);
     },
 
     binaries: function() {
@@ -70,7 +72,12 @@ module.exports = generators.Base.extend({
   install: {
 
     installDependencies: function() {
-      this.npmInstall(module_dependencies, { save: true });
+      this.on('end', function() {
+        if (!this.options['skip-install']) {
+          const install_args = ['install', '--save'].concat(module_dependencies);
+          this.spawnCommandSync('npm', install_args, { cwd: static_api_package_dir });
+        }
+      });
     },
 
   },

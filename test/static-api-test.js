@@ -9,6 +9,9 @@ describe('test/static-api-test.js', () => {
 
   before(done => {
     helpers.run(path.join(__dirname, '..', 'generators', 'static-api'))
+        .withOptions({
+          'skip-install': true,
+        })
         .withPrompts({
           apiName: api_name,
         })
