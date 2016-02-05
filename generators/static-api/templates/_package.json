@@ -1,0 +1,15 @@
+{
+  "name": "@springworks/<%=appname%>-static",
+  "version": "0.0.1",
+  "description": "Static implementation of the API",
+  "main": "index.js",
+  "bin": {
+    "start-<%=appname%>-static": "bin/start-server.js",
+    "stop-<%=appname%>-static": "bin/stop-server.js"
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=2.7"
+  },
+  "dependencies": {}
+}
