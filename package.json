@@ -30,20 +30,20 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "chalk": "^1.1.1",
-    "yeoman-generator": "^0.22.5"
+    "chalk": "1.1.1",
+    "yeoman-generator": "0.22.5"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "coveralls": "^2.11.2",
+    "chai": "3.5.0",
+    "coveralls": "2.11.2",
     "eslint": "1.10.3",
     "eslint-config-springworks": "6.0.0",
     "eslint-plugin-mocha": "1.1.0",
-    "istanbul": "^0.4.2",
-    "mocha": "^2.2.1",
+    "istanbul": "0.4.2",
+    "mocha": "2.2.1",
     "mocha-lcov-reporter": "1.0.0"
   },
   "peerDependencies": {
-    "yo": "^1.4.2"
+    "yo": "1.4.2"
   }
 }
