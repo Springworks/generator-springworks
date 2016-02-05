@@ -6,6 +6,7 @@ const module_dependencies = [
   '@springworks/static-api-server',
   'fixture-loader',
   'forever',
+  'swagger-md',
 ];
 
 module.exports = generators.Base.extend({
@@ -58,6 +59,11 @@ module.exports = generators.Base.extend({
 
     docs: function() {
       this.template('_README.md', 'packages/static-api/README.md');
+    },
+
+    binaries: function() {
+      this.template('bin/generate-docs.js', 'bin/generate-docs.js');
+      this.template('bin/generate-api-file.js', 'bin/generate-api-file.js');
     },
   },
 

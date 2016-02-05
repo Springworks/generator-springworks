@@ -42,6 +42,14 @@ describe('test/static-api-test.js', () => {
     assert.file('packages/static-api/package.json');
   });
 
+  it('should copy script for generating API', () => {
+    assert.file('bin/generate-api-file.js');
+  });
+
+  it('should copy script for generating docs', () => {
+    assert.file('bin/generate-docs.js');
+  });
+
   it('should update package.json with api name from input', () => {
     assert.jsonFileContent('packages/static-api/package.json', {
       name: `@springworks\/${api_name}-static`,
