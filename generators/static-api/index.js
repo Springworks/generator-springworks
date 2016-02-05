@@ -2,11 +2,13 @@
 
 const generators = require('yeoman-generator');
 
-const module_dependencies = [
+const api_dependencies = [
+  'swagger-md',
+];
+const static_api_dependencies = [
   '@springworks/static-api-server',
   'fixture-loader',
   'forever',
-  'swagger-md',
 ];
 
 const static_api_package_dir = 'packages/static-api';
@@ -74,8 +76,11 @@ module.exports = generators.Base.extend({
     installDependencies: function() {
       this.on('end', function() {
         if (!this.options['skip-install']) {
-          const install_args = ['install', '--save'].concat(module_dependencies);
-          this.spawnCommandSync('npm', install_args, { cwd: static_api_package_dir });
+          const static_api_install_args = ['install', '--save'].concat(static_api_dependencies);
+          this.spawnCommandSync('npm', static_api_install_args, { cwd: static_api_package_dir });
+
+          const api_install_args = ['install', '--save'].concat(api_dependencies);
+          this.spawnCommandSync('npm', api_install_args);
         }
       });
     },
