@@ -32,7 +32,7 @@
     "chai": "3.5.0",
     "coveralls": "2.11.2",
     "eslint": "1.10.3",
-    "eslint-config-springworks": "6.0.1",
+    "eslint-config-springworks": "6.0.2",
     "eslint-plugin-import": "0.13.0",
     "eslint-plugin-mocha": "1.1.0",
     "eslint-plugin-should-promised": "1.0.7",
