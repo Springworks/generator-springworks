@@ -5,6 +5,7 @@
     "dot-location": 1,
     "no-console": 0,
     "no-process-exit": 0,
-    "object-curly-spacing": 1
+    "object-curly-spacing": 1,
+    "global-require": 0,
   }
 }
