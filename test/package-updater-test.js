@@ -53,7 +53,7 @@ describe('test/package-updater-test.js', () => {
         const call_args = mock_generator.write.firstCall.args;
         call_args.should.eql([
           params.pkg_path,
-          result_as_json,
+          `${result_as_json}\n`,
         ]);
       });
 
