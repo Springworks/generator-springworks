@@ -6,9 +6,11 @@
   "scripts": {
     "test": "NODE_ENV=test istanbul cover _mocha -- --ui bdd --check-leaks --recursive --slow 200 --reporter spec test",
     "coveralls": "NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "lint": "eslint .",
-    "build": "rm -rf lib && babel src --out-dir lib",
-    "prepublish": "npm run build"
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=3"
   },
   "repository": {
     "type": "git",
@@ -26,18 +28,12 @@
   "author": "Springworks",
   "license": "MIT",
   "dependencies": {
-    "babel-runtime": "6.5.0",
     "chalk": "1.1.1",
     "lodash": "4.3.0",
     "yeoman-generator": "0.22.5"
   },
   "devDependencies": {
     "@springworks/test-harness": "1.2.4",
-    "babel-cli": "6.5.1",
-    "babel-core": "6.5.1",
-    "babel-plugin-transform-runtime": "6.5.0",
-    "babel-plugin-transform-strict-mode": "6.5.0",
-    "babel-preset-es2015-node4": "2.0.3",
     "chai": "3.5.0",
     "coveralls": "2.11.2",
     "eslint": "1.10.3",
