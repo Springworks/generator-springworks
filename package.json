@@ -8,6 +8,10 @@
     "coveralls": "NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "lint": "eslint ."
   },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=3"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Springworks/generator-springworks.git"
@@ -25,6 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "1.1.1",
+    "lodash": "4.3.0",
     "yeoman-generator": "0.22.5"
   },
   "devDependencies": {
