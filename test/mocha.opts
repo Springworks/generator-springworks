@@ -4,4 +4,3 @@
 --slow 200
 --reporter spec
 --require @springworks/test-harness
-
