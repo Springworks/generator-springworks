@@ -2,6 +2,7 @@
 
 const path = require('path');
 const generators = require('yeoman-generator');
+const package_updater = require('../../lib/package-updater');
 
 module.exports = generators.Base.extend({
 
@@ -25,6 +26,20 @@ module.exports = generators.Base.extend({
 
     linterIgnoreFile: function() {
       this.copy('.eslintignore', '.eslintignore');
+    },
+
+    updatePackageFile: function() {
+      const pkg_path = path.join(process.cwd(), 'package.json');
+      const changes = {
+        scripts: {
+          lint: 'eslint --cache .',
+        },
+      };
+      package_updater.updatePackageFile({
+        pkg_path: pkg_path,
+        changes: changes,
+        generator: this,
+      });
     },
 
   },
