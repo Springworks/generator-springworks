@@ -20,8 +20,8 @@ module.exports = generators.Base.extend({
   writing: {
 
     linterConfigs: function() {
-      this.copy('.eslintrc', '.eslintrc');
-      this.copy(path.join('test', '.eslintrc'), path.join('test', '.eslintrc'));
+      this.copy('.eslintrc.json', '.eslintrc.json');
+      this.copy(path.join('test', '.eslintrc.json'), path.join('test', '.eslintrc.json'));
     },
 
     linterIgnoreFile: function() {

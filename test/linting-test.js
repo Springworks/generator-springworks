@@ -23,11 +23,11 @@ describe('test/linting-test.js', () => {
   });
 
   it('should copy .eslintrc to root dir', () => {
-    assert.file('.eslintrc');
+    assert.file('.eslintrc.json');
   });
 
   it('should copy .eslintrc to test dir', () => {
-    assert.file(path.join('test', '.eslintrc'));
+    assert.file(path.join('test', '.eslintrc.json'));
   });
 
   it('should copy .eslintignore to root dir', () => {
