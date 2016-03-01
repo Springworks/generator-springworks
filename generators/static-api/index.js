@@ -1,10 +1,8 @@
 'use strict';
 
 const generators = require('yeoman-generator');
+const dependency_installer = require('../../lib/dependency-installer');
 
-const api_dependencies = [
-  'swagger-md',
-];
 const static_api_dependencies = [
   '@springworks/static-api-server',
   'fixture-loader',
@@ -73,14 +71,25 @@ module.exports = generators.Base.extend({
 
   install: {
 
-    installDependencies: function() {
+    installDevDependencies: function() {
+      const dependencies = [
+        'swagger-md',
+        'swagger-tools',
+      ];
+      dependency_installer.installDependencies({
+        generator: this,
+        package_names: dependencies,
+        options: {
+          saveDev: true,
+        },
+      });
+    },
+
+    installStaticApiDependencies: function() {
       this.on('end', function() {
         if (!this.options['skip-install']) {
           const static_api_install_args = ['install', '--save'].concat(static_api_dependencies);
           this.spawnCommandSync('npm', static_api_install_args, { cwd: static_api_package_dir });
-
-          const api_install_args = ['install', '--save'].concat(api_dependencies);
-          this.spawnCommandSync('npm', api_install_args);
         }
       });
     },

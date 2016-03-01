@@ -3,11 +3,18 @@
 const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
+const dependency_installer = require('../lib/dependency-installer');
+const autorestoredSandbox = require('@springworks/test-harness/autorestored-sandbox');
 
 describe('test/static-api-test.js', () => {
+  const sinon_sandbox = autorestoredSandbox();
   const api_name = 'foo-app';
 
-  before(done => {
+  beforeEach(() => {
+    sinon_sandbox.stub(dependency_installer, 'installDependencies').returns();
+  });
+
+  beforeEach(done => {
     helpers.run(path.join(__dirname, '..', 'generators', 'static-api'))
         .withOptions({
           'skip-install': true,
@@ -57,6 +64,16 @@ describe('test/static-api-test.js', () => {
     assert.jsonFileContent('packages/static-api/package.json', {
       name: `@springworks\/${api_name}-static`,
     });
+  });
+
+  it('should install swagger-tools as dev dependency', () => {
+    const call_args = dependency_installer.installDependencies.firstCall.args;
+    call_args[0].should.have.property('generator');
+    call_args[0].should.have.property('package_names', [
+      'swagger-md',
+      'swagger-tools',
+    ]);
+    call_args[0].should.have.property('options', { saveDev: true });
   });
 
 });
