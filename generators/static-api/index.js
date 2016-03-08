@@ -1,7 +1,9 @@
 'use strict';
 
+const path = require('path');
 const generators = require('yeoman-generator');
 const dependency_installer = require('../../lib/dependency-installer');
+const package_updater = require('../../lib/package-updater');
 
 const static_api_dependencies = [
   '@springworks/static-api-server',
@@ -66,6 +68,18 @@ module.exports = generators.Base.extend({
     binaries: function() {
       this.template('bin/generate-docs.js', 'bin/generate-docs.js');
       this.template('bin/generate-api-file.js', 'bin/generate-api-file.js');
+    },
+
+    scripts: function() {
+      const pkg_path = path.join(process.cwd(), 'package.json');
+      package_updater.updatePackageFile({
+        pkg_path: pkg_path,
+        changes: {
+          api: './bin/generate-api-file.js',
+          docs: './bin/generate-docs.js',
+          'static-api': 'npm run api ; npm run docs',
+        }, generator: this,
+      });
     },
   },
 
