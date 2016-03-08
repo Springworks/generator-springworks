@@ -4,6 +4,7 @@ const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 const dependency_installer = require('../lib/dependency-installer');
+const package_updater = require('../lib/package-updater');
 const autorestoredSandbox = require('@springworks/test-harness/autorestored-sandbox');
 
 describe('test/static-api-test.js', () => {
@@ -12,6 +13,10 @@ describe('test/static-api-test.js', () => {
 
   beforeEach(() => {
     sinon_sandbox.stub(dependency_installer, 'installDependencies').returns();
+  });
+
+  beforeEach(() => {
+    sinon_sandbox.stub(package_updater, 'updatePackageFile').returns();
   });
 
   beforeEach(done => {
@@ -76,4 +81,12 @@ describe('test/static-api-test.js', () => {
     call_args[0].should.have.property('options', { saveDev: true });
   });
 
+  it('should add static API  scripts to package.json', () => {
+    const call_args = package_updater.updatePackageFile.firstCall.args;
+    call_args[0].should.have.property('changes', {
+      api: './bin/generate-api-file.js',
+      docs: './bin/generate-docs.js',
+      'static-api': 'npm run api ; npm run docs',
+    });
+  });
 });
