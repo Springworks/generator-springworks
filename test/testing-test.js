@@ -36,14 +36,14 @@ describe('test/testing-test.js', () => {
   });
 
   it('should add test scripts to package.json', () => {
-    assert.jsonFileContent('package.json', {
-      scripts: {
-        test: 'NODE_ENV=test istanbul cover _mocha',
-        'test-unit': 'NODE_ENV=test istanbul cover _mocha -- $(find test/**/unit test/unit -name \'*.js\' 2>/dev/null)',
-        'test-acceptance': 'NODE_ENV=test istanbul cover _mocha -- $(find test/**/acceptance test/acceptance -name \'*.js\' 2>/dev/null)',
-        'test-component': 'NODE_ENV=test istanbul cover _mocha -- $(find test/**/component test/component -name \'*.js\' 2>/dev/null)',
-      },
-    });
+    const expected_testing_scripts = {
+      test: 'NODE_ENV=test istanbul cover _mocha',
+      'test-no-cov': 'NODE_ENV=test mocha',
+      'test-acceptance': 'NODE_ENV=test istanbul cover _mocha -- --fgrep \'/acceptance/\'',
+      'test-component': 'NODE_ENV=test istanbul cover _mocha -- --fgrep \'/component/\'',
+      'test-unit': 'NODE_ENV=test istanbul cover _mocha -- --fgrep \'/unit/\'',
+    };
+    assert.jsonFileContent('package.json', { scripts: expected_testing_scripts });
   });
 
 });
