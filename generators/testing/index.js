@@ -31,11 +31,15 @@ module.exports = generators.Base.extend({
     updatePackageFile: function() {
       const pkg_path = path.join(process.cwd(), 'package.json');
       const pkg = package_provider.loadPackageFile(pkg_path);
-      pkg.scripts.test = 'NODE_ENV=test istanbul cover _mocha';
-      pkg.scripts['test-unit'] = 'NODE_ENV=test istanbul cover _mocha -- $(find test/**/unit test/unit -name \'*.js\' 2>/dev/null)';
-      pkg.scripts['test-acceptance'] = 'NODE_ENV=test istanbul cover _mocha -- $(find test/**/acceptance test/acceptance -name \'*.js\' 2>/dev/null)';
-      pkg.scripts['test-component'] = 'NODE_ENV=test istanbul cover _mocha -- $(find test/**/component test/component -name \'*.js\' 2>/dev/null)';
-      this.write(pkg_path, JSON.stringify(pkg, null, 2));
+      const testing_scripts = {
+        test: 'NODE_ENV=test istanbul cover _mocha',
+        'test-no-cov': 'NODE_ENV=test mocha',
+        'test-acceptance': 'NODE_ENV=test istanbul cover _mocha -- --fgrep \'/acceptance/\'',
+        'test-component': 'NODE_ENV=test istanbul cover _mocha -- --fgrep \'/component/\'',
+        'test-unit': 'NODE_ENV=test istanbul cover _mocha -- --fgrep \'/unit/\'',
+      };
+      Object.assign(pkg.scripts, testing_scripts);
+      this.write(pkg_path, JSON.stringify(pkg, null, 2) + '\n');
     },
 
   },
@@ -52,6 +56,5 @@ module.exports = generators.Base.extend({
     },
 
   },
-
 
 });
