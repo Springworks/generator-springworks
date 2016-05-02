@@ -28,7 +28,7 @@
   "author": "Springworks",
   "license": "MIT",
   "dependencies": {
-    "lodash": "4.11.1",
+    "lodash": "4.11.2",
     "yeoman-generator": "0.22.6"
   },
   "devDependencies": {
