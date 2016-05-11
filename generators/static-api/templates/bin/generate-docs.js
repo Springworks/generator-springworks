@@ -14,7 +14,8 @@ const static_api = require('../packages/static-api');
 const filename = 'API.md';
 
 function provideResponseExample(path, method) {
-  const full_path = api_spec.basePath + path;
+  const base_path = api_spec.basePath || '';
+  const full_path = base_path + path;
   try {
     const json = static_api.provideFixtures().loadParsedJson(full_path, method);
     const stringified = JSON.stringify(json, null, 2);
