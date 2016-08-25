@@ -32,7 +32,7 @@
     "yeoman-generator": "0.22.6"
   },
   "devDependencies": {
-    "@springworks/test-harness": "1.4.1",
+    "@springworks/test-harness": "1.4.3",
     "coveralls": "2.11.12",
     "eslint": "3.3.1",
     "eslint-config-springworks": "7.0.6",
