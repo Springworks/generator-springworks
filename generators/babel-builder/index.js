@@ -34,7 +34,7 @@ module.exports = generators.Base.extend({
       const pkg_path = path.join(process.cwd(), 'package.json');
       const changes = {
         scripts: {
-          build: 'rm -rf lib && babel src --out-dir lib',
+          build: 'rm -rf build && babel src --out-dir build',
           prepublish: 'npm run build',
         },
       };

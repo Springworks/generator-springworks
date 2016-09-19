@@ -42,7 +42,7 @@ describe('test/babel-builder-test.js', () => {
     const call_args = package_updater.updatePackageFile.firstCall.args;
     call_args[0].changes.should.eql({
       scripts: {
-        build: 'rm -rf lib && babel src --out-dir lib',
+        build: 'rm -rf build && babel src --out-dir build',
         prepublish: 'npm run build',
       },
     });
