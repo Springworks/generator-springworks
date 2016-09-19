@@ -50,24 +50,15 @@ describe('test/babel-builder-test.js', () => {
 
   it('should install required babel dev dependencies', () => {
     const call_args = dependency_installer.installDependencies.firstCall.args;
+    dependency_installer.installDependencies.should.be.calledOnce();
     call_args[0].should.have.property('generator');
     call_args[0].should.have.property('package_names', [
       'babel-cli',
       'babel-core',
-      'babel-plugin-transform-runtime',
       'babel-plugin-transform-strict-mode',
       'babel-preset-es2015-node4',
     ]);
     call_args[0].should.have.property('options', { saveDev: true });
-  });
-
-  it('should install required babel dependency', () => {
-    const call_args = dependency_installer.installDependencies.secondCall.args;
-    call_args[0].should.have.property('generator');
-    call_args[0].should.have.property('package_names', [
-      'babel-runtime',
-    ]);
-    call_args[0].should.have.property('options', { save: true });
   });
 
 });

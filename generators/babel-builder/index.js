@@ -53,7 +53,6 @@ module.exports = generators.Base.extend({
       const dependencies = [
         'babel-cli',
         'babel-core',
-        'babel-plugin-transform-runtime',
         'babel-plugin-transform-strict-mode',
         'babel-preset-es2015-node4',
       ];
@@ -62,19 +61,6 @@ module.exports = generators.Base.extend({
         package_names: dependencies,
         options: {
           saveDev: true,
-        },
-      });
-    },
-
-    installDependencies: function() {
-      const dependencies = [
-        'babel-runtime',
-      ];
-      dependency_installer.installDependencies({
-        generator: this,
-        package_names: dependencies,
-        options: {
-          save: true,
         },
       });
     },
