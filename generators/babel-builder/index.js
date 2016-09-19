@@ -52,6 +52,7 @@ module.exports = generators.Base.extend({
     installDevDependencies: function() {
       const dependencies = [
         'babel-cli',
+        'babel-register',
         'babel-plugin-transform-strict-mode',
         'babel-preset-es2015-node4',
       ];
