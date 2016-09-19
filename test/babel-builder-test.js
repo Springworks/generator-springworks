@@ -54,7 +54,6 @@ describe('test/babel-builder-test.js', () => {
     call_args[0].should.have.property('generator');
     call_args[0].should.have.property('package_names', [
       'babel-cli',
-      'babel-core',
       'babel-plugin-transform-strict-mode',
       'babel-preset-es2015-node4',
     ]);
