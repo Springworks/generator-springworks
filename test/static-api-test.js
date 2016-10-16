@@ -67,7 +67,7 @@ describe('test/static-api-test.js', () => {
 
   it('should update package.json with api name from input', () => {
     assert.jsonFileContent('packages/static-api/package.json', {
-      name: `@springworks\/${api_name}-static`,
+      name: `@springworks/${api_name}-static`,
     });
   });
 
