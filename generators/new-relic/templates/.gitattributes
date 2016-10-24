@@ -1,0 +1,2 @@
+# Encrypt new relic with its license key
+newrelic.js filter=git-crypt diff=git-crypt
