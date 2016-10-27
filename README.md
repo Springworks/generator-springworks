@@ -16,11 +16,14 @@ First of all you need the `yo` cli tool to run the generators.
 $ npm install -g yo
 ```
 
-When the cli tool is installed it's time to install the generator.
+Install the generator:
 
 ```bash
-$ npm install -g generator-springworks
+$ cd generator-springworks
+$ npm install -g
 ```
+
+Ensure your project is an NPM project (i.e. run `npm init` unless already initialized). 
 
 Once all the required packages are installed you can run
 
