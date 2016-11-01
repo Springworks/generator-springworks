@@ -29,14 +29,20 @@ Once all the required packages are installed you can run
 
 ```bash
 $ mkdir my-awesome-project && cd my-awesome-project
-$ yo springworks
 ```
 
-There are a couple of options for the generators, and those can be listed with
+For example, to generate linting... 
+
+ ```bash
+ $ yo springworks:linting
+ ```
+
+To list all generate helpers, run:  
 
 ```bash
-$ yo springworks --help
+$ yo --help
 ```
+
 
 ## License
 
