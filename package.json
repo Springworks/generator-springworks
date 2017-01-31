@@ -28,13 +28,13 @@
   "author": "Springworks",
   "license": "MIT",
   "dependencies": {
-    "lodash": "4.17.3",
+    "lodash": "4.17.4",
     "yeoman-generator": "0.22.6"
   },
   "devDependencies": {
-    "@springworks/test-harness": "1.5.3",
+    "@springworks/test-harness": "1.5.4",
     "coveralls": "2.11.15",
-    "eslint": "3.13.1",
+    "eslint": "3.14.1",
     "eslint-config-springworks": "7.0.7",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-mocha": "4.8.0",
@@ -42,7 +42,7 @@
     "eslint-plugin-springworks": "2.0.1",
     "istanbul": "0.4.5",
     "mocha": "3.2.0",
-    "yeoman-assert": "2.2.1",
+    "yeoman-assert": "2.2.2",
     "yeoman-test": "1.6.0"
   },
   "peerDependencies": {
