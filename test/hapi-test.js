@@ -1,13 +1,14 @@
 'use strict';
 
 const assert = require('yeoman-assert');
-var generators = require('yeoman-generator');
+const generators = require('yeoman-generator');
 const helpers = require('yeoman-test');
+const package_updater = require('../lib/package-updater');
 const path = require('path');
 const dependency_installer = require('../lib/dependency-installer');
 const autorestoredSandbox = require('@springworks/test-harness/autorestored-sandbox');
 
-describe.only('test/hapi-test.js', () => {
+describe('test/hapi-test.js', () => {
   const sinon_sandbox = autorestoredSandbox();
 
   let babel_builder_spy;
@@ -17,6 +18,10 @@ describe.only('test/hapi-test.js', () => {
 
   beforeEach(() => {
     sinon_sandbox.stub(dependency_installer, 'installDependencies').returns();
+  });
+
+  beforeEach(() => {
+    sinon_sandbox.stub(package_updater, 'updatePackageFile').returns();
   });
 
   beforeEach(() => {
