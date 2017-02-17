@@ -1,0 +1,23 @@
+{
+  "name": "@springworks/<%=server_name%>",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Springworks/m2h-<%=server_name%>"
+  },
+  "bugs": "https://github.com/Springworks/m2h-<%=server_name%>/issues",
+  "homepage": "https://github.com/Springworks/m2h-<%=server_name%>#readme",
+  "author": "Springworks",
+  "engines": {
+    "node": ">=4",
+    "npm": ">=2.7"
+  },
+  "dependencies": {
+  }
+}
