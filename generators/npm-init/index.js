@@ -28,7 +28,7 @@ module.exports = generators.Base.extend({
       {
         type: 'input',
         name: 'server_name',
-        message: 'Name of the server (full name will be @springworks/{server_name})',
+        message: 'Name of the server',
         default: guessed_name,
       },
       {

@@ -45,7 +45,7 @@ describe('test/npm-init-test.js', () => {
 
   it('should update package.json with api name from input', () => {
     assert.jsonFileContent('package.json', {
-      name: `@springworks/${server_name}`,
+      name: server_name,
     });
   });
 
