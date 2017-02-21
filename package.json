@@ -4,7 +4,7 @@
   "description": "Springworks Yeoman Generator",
   "private": false,
   "scripts": {
-    "test": "NODE_ENV=test istanbul cover _mocha -- --ui bdd --check-leaks --recursive --slow 200 --reporter spec test",
+    "test": "NODE_ENV=test istanbul cover  _mocha -- --ui bdd --check-leaks --recursive --slow 200 --reporter spec test",
     "coveralls": "NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "lint": "eslint ."
   },
@@ -29,6 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "4.17.4",
+    "newrelic": "^1.37.0",
     "yeoman-generator": "0.22.6"
   },
   "devDependencies": {
