@@ -28,23 +28,23 @@
   "author": "Springworks",
   "license": "MIT",
   "dependencies": {
-    "lodash": "4.17.4",
+    "lodash": "^4.17.4",
     "newrelic": "^1.37.0",
-    "yeoman-generator": "0.22.6"
+    "yeoman-generator": "^0.22.6"
   },
   "devDependencies": {
-    "@springworks/test-harness": "1.5.5",
-    "coveralls": "2.11.16",
-    "eslint": "3.17.1",
-    "eslint-config-springworks": "7.0.7",
-    "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-mocha": "4.8.0",
-    "eslint-plugin-should-promised": "2.0.0",
-    "eslint-plugin-springworks": "2.0.1",
-    "istanbul": "0.4.5",
-    "mocha": "3.2.0",
-    "yeoman-assert": "2.2.2",
-    "yeoman-test": "1.6.0"
+    "@springworks/test-harness": "^1.5.5",
+    "coveralls": "^2.11.16",
+    "eslint": "^3.17.1",
+    "eslint-config-springworks": "^7.0.7",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-mocha": "^4.8.0",
+    "eslint-plugin-should-promised": "^2.0.0",
+    "eslint-plugin-springworks": "^2.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "yeoman-assert": "^2.2.2",
+    "yeoman-test": "^1.6.0"
   },
   "peerDependencies": {
     "yo": ">=1.8.2"
