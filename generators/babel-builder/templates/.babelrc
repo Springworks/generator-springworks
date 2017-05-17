@@ -1,8 +1,6 @@
 {
   "presets": [
-    "es2015-node4"
+    "env"
   ],
-  "plugins": [
-    "transform-strict-mode"
-  ]
+  "plugins": []
 }
