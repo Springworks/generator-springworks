@@ -32,6 +32,7 @@ module.exports = generators.Base.extend({
     installDependencies: function() {
       const dependencies = [
         'newrelic',
+        '@newrelic/native-metrics',
       ];
       this.npmInstall(dependencies, { save: true });
     },
