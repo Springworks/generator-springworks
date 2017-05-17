@@ -43,7 +43,7 @@ describe('test/babel-builder-test.js', () => {
     call_args[0].changes.should.eql({
       scripts: {
         build: 'rm -rf build && babel src --out-dir build',
-        prepublish: 'npm run build',
+        prepublish: 'yarn run build',
       },
     });
   });
@@ -55,8 +55,7 @@ describe('test/babel-builder-test.js', () => {
     call_args[0].should.have.property('package_names', [
       'babel-cli',
       'babel-register',
-      'babel-plugin-transform-strict-mode',
-      'babel-preset-es2015-node4',
+      'babel-preset-env',
     ]);
     call_args[0].should.have.property('options', { saveDev: true });
   });

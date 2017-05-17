@@ -8,12 +8,12 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['<INSET-APPLICATION-NAME-HERE>'],
+  app_name: ['<INSERT-APPLICATION-NAME-HERE>'],
 
   /**
    * Your New Relic license key.
    */
-  license_key: '<INSET-LICENSE-KEY-HERE>',
+  license_key: '<INSERT-LICENSE-KEY-HERE>',
 
   logging: {
     /**

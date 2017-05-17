@@ -35,7 +35,7 @@ module.exports = generators.Base.extend({
       const changes = {
         scripts: {
           build: 'rm -rf build && babel src --out-dir build',
-          prepublish: 'npm run build',
+          prepublish: 'yarn run build',
         },
       };
       package_updater.updatePackageFile({
@@ -53,8 +53,7 @@ module.exports = generators.Base.extend({
       const dependencies = [
         'babel-cli',
         'babel-register',
-        'babel-plugin-transform-strict-mode',
-        'babel-preset-es2015-node4',
+        'babel-preset-env',
       ];
       dependency_installer.installDependencies({
         generator: this,
