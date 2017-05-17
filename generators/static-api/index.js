@@ -77,7 +77,7 @@ module.exports = generators.Base.extend({
         changes: {
           api: './bin/generate-api-file.js',
           docs: './bin/generate-docs.js',
-          'static-api': 'npm run api ; npm run docs',
+          'static-api': 'yarn run api ; yarn run docs',
         }, generator: this,
       });
     },

@@ -1,6 +1,6 @@
 # babel-builder
 
-Generates files and installs packages needed to configure a Babel project, that builds ES5 code before `npm publish`.
+Generates files and installs packages needed to configure a Babel project, that builds ES5 code before `yarn publish`.
 
 ## Usage
 

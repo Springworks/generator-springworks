@@ -86,7 +86,7 @@ describe('test/static-api-test.js', () => {
     call_args[0].should.have.property('changes', {
       api: './bin/generate-api-file.js',
       docs: './bin/generate-docs.js',
-      'static-api': 'npm run api ; npm run docs',
+      'static-api': 'yarn run api ; yarn run docs',
     });
   });
 });

@@ -43,7 +43,7 @@ describe('test/babel-builder-test.js', () => {
     call_args[0].changes.should.eql({
       scripts: {
         build: 'rm -rf build && babel src --out-dir build',
-        prepublish: 'npm run build',
+        prepublish: 'yarn run build',
       },
     });
   });

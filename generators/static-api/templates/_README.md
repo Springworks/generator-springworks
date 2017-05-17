@@ -1,5 +1,5 @@
 # Static API
-Expects Swagger spec (`api.json`) to be copied into this package's directory, e.g. with `npm run static-api`.
+Expects Swagger spec (`api.json`) to be copied into this package's directory, e.g. with `yarn run static-api`.
 
 ## API
 

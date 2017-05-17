@@ -35,7 +35,7 @@ module.exports = generators.Base.extend({
       const changes = {
         scripts: {
           build: 'rm -rf build && babel src --out-dir build',
-          prepublish: 'npm run build',
+          prepublish: 'yarn run build',
         },
       };
       package_updater.updatePackageFile({
