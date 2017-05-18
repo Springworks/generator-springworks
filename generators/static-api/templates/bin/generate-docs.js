@@ -30,11 +30,9 @@ function provideResponseExample(path, method) {
   }
 }
 
-swagger_md.default.convertToMarkdown(api_spec, { response_example_provider: provideResponseExample })
-    .then(markdown => {
-      fs.writeFileSync(filename, markdown);
-    }, err => {
-      throw err;
-    });
-
-
+swagger_md.default.convertToMarkdown(api_spec, { response_example_provider: provideResponseExample }).then(markdown => {
+  fs.writeFileSync(filename, markdown);
+}).catch(err => {
+  console.error(err);
+  process.exit(1);
+});
