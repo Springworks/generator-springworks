@@ -30,7 +30,7 @@ function provideResponseExample(path, method) {
   }
 }
 
-swagger_md.default.convertToMarkdown(api_spec, provideResponseExample)
+swagger_md.default.convertToMarkdown(api_spec, { response_example_provider: provideResponseExample })
     .then(markdown => {
       fs.writeFileSync(filename, markdown);
     }, err => {
