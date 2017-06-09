@@ -1,9 +1,10 @@
 {
   "name": "<%=server_name%>",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "",
+  "files": [],
   "main": "server.js",
-  "private": "true",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,8 +16,8 @@
   "homepage": "https://github.com/Springworks/m2h-<%=server_name%>#readme",
   "author": "Springworks",
   "engines": {
-    "node": ">=4",
-    "npm": ">=2.7"
+    "node": ">=8",
+    "npm": ">=5"
   },
   "dependencies": {
   }
