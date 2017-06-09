@@ -33,6 +33,7 @@ module.exports = generators.Base.extend({
     updatePackageFile: function() {
       const pkg_path = path.join(process.cwd(), 'package.json');
       const changes = {
+        files: ['build'],
         scripts: {
           build: 'rm -rf build && babel src --out-dir build --copy-files',
           prepublish: 'yarn run build',

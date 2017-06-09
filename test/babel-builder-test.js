@@ -41,6 +41,7 @@ describe('test/babel-builder-test.js', () => {
   it('should add build scripts to package.json', () => {
     const call_args = package_updater.updatePackageFile.firstCall.args;
     call_args[0].changes.should.eql({
+      files: ['build'],
       scripts: {
         build: 'rm -rf build && babel src --out-dir build --copy-files',
         prepublish: 'yarn run build',
