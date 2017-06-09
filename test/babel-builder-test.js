@@ -42,7 +42,7 @@ describe('test/babel-builder-test.js', () => {
     const call_args = package_updater.updatePackageFile.firstCall.args;
     call_args[0].changes.should.eql({
       scripts: {
-        build: 'rm -rf build && babel src --out-dir build',
+        build: 'rm -rf build && babel src --out-dir build --copy-files',
         prepublish: 'yarn run build',
       },
     });
