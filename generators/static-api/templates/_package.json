@@ -1,5 +1,6 @@
 {
   "name": "@springworks/<%=appname%>-static",
+  "version": "0.0.1",
   "description": "Static implementation of the API",
   "main": "index.js",
   "bin": {
