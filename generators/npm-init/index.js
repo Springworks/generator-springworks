@@ -1,7 +1,6 @@
 'use strict';
 
 const generators = require('yeoman-generator');
-const dependency_installer = require('../../lib/dependency-installer');
 const path = require('path');
 
 module.exports = generators.Base.extend({
@@ -27,8 +26,8 @@ module.exports = generators.Base.extend({
     const prompts = [
       {
         type: 'input',
-        name: 'server_name',
-        message: 'Name of the server',
+        name: 'repository_name',
+        message: 'Name of the Github repo',
         default: guessed_name,
       },
       {
@@ -40,7 +39,7 @@ module.exports = generators.Base.extend({
 
 
     this.prompt(prompts, function(answers) {
-        this.server_name = answers.server_name;
+        this.repository_name = answers.repository_name;
         this.description = answers.description;
       done();
     }.bind(this));
@@ -48,7 +47,7 @@ module.exports = generators.Base.extend({
 
   configuring: function() {
     this.config.set({
-      server_name: this.server_name,
+      repository_name: this.repository_name,
       description: this.description,
     });
   },
@@ -63,30 +62,10 @@ module.exports = generators.Base.extend({
     docs: function() {
       this.log('writing npm-init:docs');
       this.template('_README.md', `${this.destinationRoot()}/README.md`, {
-        server_name: this.server_name,
+        repository_name: this.repository_name,
         description: this.description,
       });
     },
-  },
-
-  install: {
-
-    installDevDependencies: function() {
-      this.log('npm-init:installing');
-
-      const dependencies = [
-        'swagger-md',
-        'swagger-tools',
-      ];
-      dependency_installer.installDependencies({
-        generator: this,
-        package_names: dependencies,
-        options: {
-          saveDev: true,
-        },
-      });
-    },
-
   },
 
 });
