@@ -1,4 +1,4 @@
-# m2h-<%=server_name%>
+# <%=repository_name%>
 <%=description%>
 
 ## API
