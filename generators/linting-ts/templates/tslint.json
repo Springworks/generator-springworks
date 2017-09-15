@@ -1,0 +1,4 @@
+{
+  "extends": "@springworks/tslint-config",
+  "rules": {}
+}
