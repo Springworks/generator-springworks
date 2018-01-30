@@ -18,6 +18,9 @@ function provideResponseExample(path, method) {
   const full_path = base_path + path;
   try {
     const json = static_api.provideFixtures().loadParsedJson(full_path, method);
+    if (json.length === 0) {
+      return 'N/A';
+    }
     const stringified = JSON.stringify(json, null, 2);
     return [
       '```json',
